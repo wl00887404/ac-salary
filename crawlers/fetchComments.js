@@ -29,7 +29,7 @@ const fetch = async (browser, url) => {
     results.push(
       ...data
         .filter(
-          ({ name, time }) => name == '政治' && begin <= time && time < end,
+          ({ name, time }) => name == 'Max' && begin <= time && time < end,
         )
         .map(({ time }) => new Date(time).toISOString()),
     );
