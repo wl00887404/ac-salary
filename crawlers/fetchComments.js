@@ -18,11 +18,12 @@ const fetch = async (browser, url) => {
     const data = await page.$$eval('tr[id^="comment"]', trs =>
       trs.map(tr => {
         const name = tr.querySelector('td:nth-child(1) a').innerText;
+        const url = tr.querySelector('td:nth-child(8) a').href;
         const time = new Date(
           tr.querySelector('td:nth-child(7)').innerText,
         ).getTime();
 
-        return { name, time };
+        return { name, url, time };
       }),
     );
 
@@ -31,7 +32,10 @@ const fetch = async (browser, url) => {
         .filter(
           ({ name, time }) => name == 'Max' && begin <= time && time < end,
         )
-        .map(({ time }) => new Date(time).toISOString()),
+        .map(({ url, time }) => {
+          console.log(url);
+          return new Date(time).toISOString();
+        }),
     );
 
     const nextButton = await page.$('a[rel="next"]');

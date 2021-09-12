@@ -5,23 +5,39 @@
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=39&status=no_need_to_reply"
     },
     {
-      "name": "F2-1",
+      "name": "F2-1 (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=40&status=no_need_to_reply"
     },
     {
-      "name": "F2-2",
+      "name": "F2-2 (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=41&status=no_need_to_reply"
     },
     {
-      "name": "F2-3",
+      "name": "F2-3 (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=42&status=no_need_to_reply"
     },
     {
-      "name": "Capstone-FE",
+      "name": "Capstone-FE (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=45&status=no_need_to_reply"
+    },
+    {
+      "name": "F2-1",
+      "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=98&status=no_need_to_reply"
+    },
+    {
+      "name": "F2-2",
+      "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=99&status=no_need_to_reply"
+    },
+    {
+      "name": "F2-3",
+      "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=100&status=no_need_to_reply"
+    },
+    {
+      "name": "Capstone-FE",
+      "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=119&status=no_need_to_reply"
     }
   ],
-  "begin": "2021/6/25",
-  "end": "2021/8/1",
+  "begin": "2021/8/1",
+  "end": "2021/9/1",
   "__comment__": "begin is included, end is excluded."
 }
