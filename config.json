@@ -1,39 +1,43 @@
 {
   "programs": [
     {
-      "name": "INTRO",
+      "name": "學期 1：程式設計入門",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=39&status=no_need_to_reply"
     },
     {
-      "name": "F2-1 (2020)",
+      "name": "學期 2-1：JavaScript 前端開發 (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=40&status=no_need_to_reply"
     },
     {
-      "name": "F2-2 (2020)",
+      "name": "學期 2-2：軟體開發實務入門 (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=41&status=no_need_to_reply"
     },
     {
-      "name": "F2-3 (2020)",
+      "name": "學期 2-3：後端開發實務 (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=42&status=no_need_to_reply"
     },
     {
-      "name": "Capstone-FE (2020)",
+      "name": "學期 3：軟體工程師養成 - 前端課程 (2020)",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=45&status=no_need_to_reply"
     },
     {
-      "name": "F2-1",
+      "name": "學期 2-1：JavaScript 前端開發",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=98&status=no_need_to_reply"
     },
     {
-      "name": "F2-2",
+      "name": "學期 2-2：軟體開發實務入門",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=99&status=no_need_to_reply"
     },
     {
-      "name": "F2-3",
+      "name": "學期 2-3：後端開發實務",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=100&status=no_need_to_reply"
     },
     {
-      "name": "Capstone-FE",
+      "name": "學期 2-3：前端開發實務",
+      "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=101&status=no_need_to_reply"
+    },
+    {
+      "name": "學期 3：軟體工程師養成 - 前端課程",
       "url": "https://lighthouse.alphacamp.co/console/ta_dashboard?program_id=119&status=no_need_to_reply"
     }
   ],

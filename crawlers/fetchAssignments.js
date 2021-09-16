@@ -22,8 +22,9 @@ const fetch = async browser => {
         const time = new Date(
           tr.querySelector('td:nth-child(2)').innerText,
         ).getTime();
+        const url = tr.querySelector('td:nth-child(3) a').href;
 
-        return { name, time };
+        return { name, url, time };
       }),
     );
 
@@ -32,7 +33,10 @@ const fetch = async browser => {
         .filter(
           ({ name, time }) => name == 'Max' && begin <= time && time < end,
         )
-        .map(({ time }) => new Date(time).toISOString()),
+        .map(({ url, time }) => {
+          console.log(url);
+          return new Date(time).toISOString();
+        }),
     );
 
     const nextButton = await page.$('a[rel="next"]');
