@@ -7,6 +7,7 @@ const { programs } = config;
 
 const begin = new Date(config.begin).getTime();
 const end = new Date(config.end).getTime();
+const urls = [];
 
 const fetch = async (browser, url) => {
   const page = await browser.newPage();
@@ -27,16 +28,12 @@ const fetch = async (browser, url) => {
       }),
     );
 
-    results.push(
-      ...data
-        .filter(
-          ({ name, time }) => name == 'Max' && begin <= time && time < end,
-        )
-        .map(({ url, time }) => {
-          console.log(url);
-          return new Date(time).toISOString();
-        }),
+    const myData = data.filter(
+      ({ name, time }) => name == 'Max' && begin <= time && time < end,
     );
+
+    results.push(...myData.map(({ time }) => new Date(time).toISOString()));
+    urls.push(...myData.map(({ url }) => url));
 
     const nextButton = await page.$('a[rel="next"]');
 
@@ -53,20 +50,19 @@ const stringify = value => JSON.stringify(value, null, 2);
 
 const main = async () => {
   const browser = await login();
-  const result = await Promise.all(
+  const fetchResults = await Promise.all(
     programs.map(program => fetch(browser, program.url)),
   );
-  writeFileSync(
-    './commentsByProgram.json',
-    stringify(
-      fromPairs(
-        zip(programs, result).map(([program, comments]) => [
-          program.name,
-          comments,
-        ]),
-      ),
-    ),
+
+  const commentsByProgram = fromPairs(
+    zip(programs, fetchResults).map(([program, comments]) => [
+      program.name,
+      comments,
+    ]),
   );
+
+  writeFileSync('./commentsByProgram.json', stringify(commentsByProgram));
+  writeFileSync('./commentUrls.json', stringify(urls.sort()));
 
   browser.close();
 };

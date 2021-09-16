@@ -4,8 +4,8 @@ const { last, sum } = require('lodash');
 const pug = require('pug');
 
 const { programs } = require('./config');
-const commentsByProgram = require('./commentsByProgram.json');
-const assignments = require('./assignments.json');
+const commentsByProgram = require('../commentsByProgram.json');
+const assignments = require('../assignments.json');
 
 const makeEventFactory = (commentDates, assignmentDates) => {
   const distinctCommentDates = new Set(commentDates);

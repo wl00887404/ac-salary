@@ -10,7 +10,8 @@
   },
   "scripts": {
     "start": "yarn fetch && yarn make",
-    "make": "node index",
+    "make": "node scripts/makeResultHtml",
+    "doubleCheck": "node scripts/doubleCheck",
     "fetch": "yarn fetch:comments && yarn fetch:assignments",
     "fetch:comments": "node crawlers/fetchComments",
     "fetch:assignments": "node crawlers/fetchAssignments"

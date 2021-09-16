@@ -8,6 +8,7 @@ const begin = new Date(config.begin).getTime();
 const end = new Date(config.end).getTime();
 const url =
   'https://lighthouse.alphacamp.co/console/answer_lists/answer_comments?program_id=39&status=replied';
+const urls = [];
 
 const fetch = async browser => {
   const page = await browser.newPage();
@@ -27,17 +28,12 @@ const fetch = async browser => {
         return { name, url, time };
       }),
     );
-
-    results.push(
-      ...data
-        .filter(
-          ({ name, time }) => name == 'Max' && begin <= time && time < end,
-        )
-        .map(({ url, time }) => {
-          console.log(url);
-          return new Date(time).toISOString();
-        }),
+    const myData = data.filter(
+      ({ name, time }) => name == 'Max' && begin <= time && time < end,
     );
+
+    results.push(...myData.map(({ time }) => new Date(time).toISOString()));
+    urls.push(...myData.map(({ url }) => url));
 
     const nextButton = await page.$('a[rel="next"]');
 
@@ -57,6 +53,7 @@ const main = async () => {
   const results = await fetch(browser);
 
   writeFileSync('./assignments.json', stringify(results));
+  writeFileSync('./assignmentUrls.json', stringify(urls.sort()));
 
   browser.close();
 };
