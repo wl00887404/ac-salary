@@ -6,7 +6,7 @@ const assignmentUrls = require('../assignmentUrls.json');
 const commentUrls = require('../commentUrls.json');
 const urlsByMyCrawler = [...assignmentUrls, ...commentUrls].sort();
 
-console.log(urlsByMyCrawler);
+console.log(JSON.stringify(urlsByMyCrawler, null, 2));
 
 const main = async () => {
   const browser = await login();
@@ -18,7 +18,7 @@ const main = async () => {
     })
   ).sort();
 
-  console.log(urlsByAlphaCamp);
+  console.log(JSON.stringify(urlsByAlphaCamp, null, 2));
 
   const result = zip(urlsByMyCrawler, urlsByAlphaCamp).every(([url1, url2]) => {
     return url1 === url2;
