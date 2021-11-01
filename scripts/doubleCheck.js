@@ -19,12 +19,6 @@ const main = async () => {
   ).sort();
 
   console.log(JSON.stringify(urlsByAlphaCamp, null, 2));
-
-  const result = zip(urlsByMyCrawler, urlsByAlphaCamp).every(([url1, url2]) => {
-    return url1 === url2;
-  });
-
-  console.log(result);
   browser.close();
 };
 
